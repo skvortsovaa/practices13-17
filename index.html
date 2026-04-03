@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Заметки (13–17)</title>
+
+  <link rel="manifest" href="manifest.json" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="theme-color" content="#4285f4" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Заметки" />
+
+  <link rel="apple-touch-icon" href="icons/icon-152x152.png" />
+  <link rel="icon" href="icons/favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="https://unpkg.com/chota@latest" />
+
+  <style>
+    .no-break { white-space: nowrap; }
+    .tab.active { font-weight: 700; }
+  </style>
+</head>
+<body>
+  <header class="container" style="padding-top: 2rem;">
+    <h1>«Заметки» — <span class="no-break">оффлайн-приложение</span></h1>
+
+    <nav class="tabs is-center" style="margin-top: 1rem;">
+      <button id="home-btn" class="tab active col-6">Главная</button>
+      <button id="about-btn" class="tab col-6">О приложении</button>
+    </nav>
+  </header>
+
+  <main id="app-content" class="container" style="margin-top: 2rem;"></main>
+
+  <footer class="container is-center" style="margin: 2rem auto;">
+    <button id="enable-push" class="button success">Включить уведомления</button>
+    <button id="disable-push" class="button error" style="display: none;">Отключить уведомления</button>
+  </footer>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
